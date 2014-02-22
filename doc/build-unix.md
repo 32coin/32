@@ -6,8 +6,13 @@ Some notes on how to build Bitcoin in Unix.
 To Build
 ---------------------
 
-	cd src/
-	make -f makefile.unix		# Headless bitcoin
+	cd src/leveldb
+	chmod +777 ./build_detect_platform
+	wget https://github.com/bitcoin/bitcoin/raw/master/src/leveldb/Makefile
+	make
+	make libmemenv.a
+	cd ..
+	make -f makefile.unix 		# Headless bitcoin
 
 See [readme-qt.md](readme-qt.md) for instructions on building Bitcoin-Qt, the graphical user interface.
 
