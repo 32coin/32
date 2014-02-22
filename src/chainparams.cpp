@@ -47,7 +47,7 @@ public:
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
         genesis.nTime    = 1393011100;
-        genesis.nBits    = 1e0fffff;
+        genesis.nBits    = 0;
         genesis.nNonce   = 755151;
         
         //// debug print
