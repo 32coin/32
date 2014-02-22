@@ -1,5 +1,7 @@
 UNIX BUILD NOTES
 ====================
+IMPORTANT: Use UPNP=1 to compile.
+
 Some notes on how to build Bitcoin in Unix. 
 
 To Build
@@ -26,7 +28,7 @@ turned off by default.  Set USE_UPNP to a different value to control this:
 
 	USE_UPNP=     No UPnP support miniupnp not required
 	USE_UPNP=0    (the default) UPnP support turned off by default at runtime
-	USE_UPNP=1    UPnP support turned on by default at runtime
+	USE_UPNP=1    UPnP support turned on by default at runtime - USE THIS
 
 IPv6 support may be disabled by setting:
 
@@ -68,7 +70,7 @@ for other Ubuntu & Debian:
 	sudo apt-get install libboost1.37-dev
  (If using Boost 1.37, append -mt to the boost libraries in the makefile)
 
-Optional:
+REQUIRED:
 
 	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
 
