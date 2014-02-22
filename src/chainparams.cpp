@@ -26,11 +26,11 @@ public:
         pchMessageStart[0] = 0x0A;
         pchMessageStart[1] = 0xB0;
         pchMessageStart[2] = 0x04;
-        pchMessageStart[3] = 0x07;
+        pchMessageStart[3] = 0x06;
         nDefaultPort = 3232;
         nRPCPort = 3233;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
-        nSubsidyHalvingInterval = 32000;
+        nSubsidyHalvingInterval = 3200;
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
@@ -46,9 +46,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1393010700;
-        genesis.nBits    = 0x1e0fffff;
-        genesis.nNonce   = 526913;
+        genesis.nTime    = 1393011100;
+        genesis.nBits    = 0x;
+        genesis.nNonce   = 0;
         
         //// debug print
         hashGenesisBlock = genesis.GetHash();
@@ -63,8 +63,8 @@ public:
         genesis.print();
         
         
-        assert(hashGenesisBlock == uint256("0x000003a64a9c64d2b4c82d5778f9b83c5e5a5305514cc42fcb8c41efaa802fa3"));
-        assert(genesis.hashMerkleRoot == uint256("0x2e4efc36596b3f20b618ffa19a3c226cd96ab981af759e2821b215d582bad526"));
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
 
         vSeeds.push_back(CDNSSeedData("54.221.247.168", "54.221.247.168"));
 
