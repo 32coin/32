@@ -6,6 +6,7 @@ To Build
 ---------------------
 
 	cd src/leveldb
+	chmod +777 ./build_detect_platform
 	wget https://github.com/bitcoin/bitcoin/raw/master/src/leveldb/Makefile
 	make
 	make libmemenv.a
