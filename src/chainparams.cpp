@@ -23,10 +23,10 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         // The message start string is designed to be unlikely to occur in normal data.
-        pchMessageStart[0] = 0x0A;
-        pchMessageStart[1] = 0xB0;
-        pchMessageStart[2] = 0x04;
-        pchMessageStart[3] = 0x06;
+        pchMessageStart[0] = 0x05;
+        pchMessageStart[1] = 0x02;
+        pchMessageStart[2] = 0xB0;
+        pchMessageStart[3] = 0x04;
         nDefaultPort = 3232;
         nRPCPort = 3233;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
@@ -35,7 +35,7 @@ public:
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
   
-        const char* pszTimestamp = "32 Is Here!";
+        const char* pszTimestamp = "The Birth of 32!";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -46,16 +46,16 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1393011100;
-        genesis.nBits    = 0;
-        genesis.nNonce   = 755151;
+        genesis.nTime    = 1393115000;
+        genesis.nBits    = 0x1e0fffff;
+        genesis.nNonce   = 0;
         
         //// debug print
-        //hashGenesisBlock = genesis.GetHash();
-        //while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
-        //    if (++genesis.nNonce==0) break;
-        //    hashGenesisBlock = genesis.GetHash();
-        //}
+        hashGenesisBlock = genesis.GetHash();
+        while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
+            if (++genesis.nNonce==0) break;
+            hashGenesisBlock = genesis.GetHash();
+        }
 
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
@@ -63,8 +63,8 @@ public:
         genesis.print();
         
         
-        assert(hashGenesisBlock == uint256("0x00000366b554173e3c58d4d93eb37a93c5c598ca91190d7d24e7961515f21c6e"));
-        assert(genesis.hashMerkleRoot == uint256("0x2e4efc36596b3f20b618ffa19a3c226cd96ab981af759e2821b215d582bad526"));
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
 
         vSeeds.push_back(CDNSSeedData("54.221.247.168", "54.221.247.168"));
 

@@ -1,18 +1,12 @@
 UNIX BUILD NOTES
 ====================
-
 Some notes on how to build Bitcoin in Unix. 
 
 To Build
 ---------------------
 
-	cd src/leveldb
-	chmod +777 ./build_detect_platform
-	wget https://github.com/bitcoin/bitcoin/raw/master/src/leveldb/Makefile
-	make
-	make libmemenv.a
-	cd ..
-	make -f makefile.unix 		# Headless bitcoin
+	cd src/
+	make -f makefile.unix		# Headless bitcoin
 
 See [readme-qt.md](readme-qt.md) for instructions on building Bitcoin-Qt, the graphical user interface.
 
@@ -74,7 +68,7 @@ for other Ubuntu & Debian:
 	sudo apt-get install libboost1.37-dev
  (If using Boost 1.37, append -mt to the boost libraries in the makefile)
 
-REQUIRED:
+Optional:
 
 	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
 

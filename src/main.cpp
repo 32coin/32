@@ -51,9 +51,9 @@ unsigned int nCoinCacheSize = 5000;
 bool fHaveGUI = false;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
-int64 CTransaction::nMinTxFee = 10;  // Override with -mintxfee
+int64 CTransaction::nMinTxFee = 5;  // Override with -mintxfee
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
-int64 CTransaction::nMinRelayTxFee = 10;
+int64 CTransaction::nMinRelayTxFee = 5;
 
 CMedianFilter<int> cPeerBlockCounts(8, 0); // Amount of blocks that other nodes claim to have
 
@@ -1246,7 +1246,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 }
 
 static const int64 nStartSubsidy = 0.00032 * COIN;
-static const int64 nMinSubsidy = 0.00000032 * COIN;
+static const int64 nMinSubsidy = 0.0000032 * COIN;
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
